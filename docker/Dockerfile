@@ -46,4 +46,4 @@ WORKDIR /var/www/html/back
 RUN composer global require "phpunit/phpunit"
 RUN ln -s /root/.composer/vendor/bin/phpunit /usr/bin/phpunit
 #RUN ln -s /var/www/html/back/vendor/phpunit/phpunit/phpunit /usr/bin/phpunit
-RUN ln -s ./vendor/phpunit/phpunit/phpunit /usr/bin/phpunit
+#RUN ln -s ./vendor/phpunit/phpunit/phpunit /usr/bin/phpunit
