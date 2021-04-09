@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   consumer:
+    image: php:7.4-fpm-alpine
     volumes:
       - back:/var/www/html/back
     environment:
