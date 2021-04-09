@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  consumer:
+    image: registry.fozzy.lan/silpo/consumer:${BACKEND_TAG}
+    volumes:
+      - back:/var/www/html/back
+    environment:
+      HOST_UID: ${HOST_UID}
+      HOST_GID: ${HOST_GID}
+#      HTTPS_PROXY: ${HTTPS_PROXY}
+#      HTTP_PROXY: ${HTTP_PROXY}
+      NO_PROXY: ${NO_PROXY}
+      SYMFONY_ENV: ${SYMFONY_ENV}
+      BACKEND_PORT: ${BACKEND_PORT}
+    ports:
+      - 8087:82
+volumes:
+  back:
+
+networks:
+  docker.dc:
+    name: dz
