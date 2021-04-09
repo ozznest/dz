@@ -41,5 +41,4 @@ class ParseHelper
             return $rows;
         }
     }
-
 }

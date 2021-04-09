@@ -23,7 +23,6 @@ class ParseCommand extends Command
 {
     protected static $defaultName = 'app:parse';
     protected static $defaultDescription = 'Calculates fee from csv file';
-    private SerializerInterface $serializer;
     private ParseHelper $parser;
 
     protected function configure()
@@ -34,9 +33,8 @@ class ParseCommand extends Command
         ;
     }
 
-    public function __construct(SerializerInterface  $serializer, ParseHelper $parser)
+    public function __construct(ParseHelper $parser)
     {
-        $this->serializer = $serializer;
         $this->parser = $parser;
         parent::__construct('app:parse');
     }
@@ -52,7 +50,6 @@ class ParseCommand extends Command
                 foreach ($rows as $k => $row){
                     $client = ClientRepository::getOrCreateClient($row);
                     $fee = $client->addHistoryItem($row);
-                    $fee = ceil($fee * 100) / 100;
                     $output->writeln(number_format($fee,2));
                 }
             }

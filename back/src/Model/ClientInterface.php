@@ -12,7 +12,7 @@ interface ClientInterface
      * @param Operation $income
      * @return float
      */
-    public function addHistoryItem(Operation $income):float;
+    public function addHistoryItem(Operation $income, bool $round=true):float;
 
     public function isBusiness():bool;
 

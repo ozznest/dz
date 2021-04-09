@@ -19,10 +19,13 @@ class Client implements ClientInterface
         $this->historyCollection = new HistoryCollection();
     }
 
-    public function addHistoryItem(Operation $income):float
+    public function addHistoryItem(Operation $income, bool $round=true):float
     {
         $fee =  OperationStrategyFactory::factory($income, $this)->getFee();
         $this->historyCollection->addItem($income);
+        if($round){
+            return  ceil($fee * 100) / 100;
+        }
         return $fee;
 
     }
