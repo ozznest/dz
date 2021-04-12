@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  consumer:
+  back_dz:
     build:
       context: .
       dockerfile: docker/Dockerfile

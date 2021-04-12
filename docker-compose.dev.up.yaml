@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  consumer:
+  back_dz:
     environment:
       PHP_XDEBUG_DEFAULT_ENABLE: ${PHP_XDEBUG_DEFAULT_ENABLE}
       PHP_XDEBUG_REMOTE_ENABLE: ${PHP_XDEBUG_REMOTE_ENABLE}
@@ -13,7 +13,7 @@ services:
       PHP_XDEBUG_PROFILER_OUTPUT_DIR: ${PHP_XDEBUG_PROFILER_OUTPUT_DIR}
       PHP_IDE_CONFIG: ${PHP_IDE_CONFIG}
 volumes:
-  back:
+  back_dz:
     driver: local
     driver_opts:
       type: none

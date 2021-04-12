@@ -1,10 +1,10 @@
 version: '3.8'
 
 services:
-  consumer:
+  back_dz:
     image: php:7.4-fpm-alpine
     volumes:
-      - back:/var/www/html/back
+      - back_dz:/var/www/html/back
     environment:
       HOST_UID: ${HOST_UID}
       HOST_GID: ${HOST_GID}
@@ -14,8 +14,4 @@ services:
     ports:
       - 8087:82
 volumes:
-  back:
-
-networks:
-  docker.dc:
-    name: dz
+  back_dz:
